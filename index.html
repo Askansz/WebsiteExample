@@ -52,7 +52,8 @@
         let enteredPassword = document.getElementById("pswd").value
         
         if (enteredUsername === username && enteredPassword === password) {
-          window.location.href="dashboard.html";
+          localStorage.setItem("loggedIn", "true");
+          window.location.href = "dashboard.html";
         } else {
           document.getElementById("loginError").innerHTML = "Invalid username or password. Try again."
           document.getElementById("loginError").style.display = "block"
