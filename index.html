@@ -4,39 +4,61 @@
     <style>
       h1 {
         color: #000000;
-        text-align: center;
+        /* text-align: center; */
         font-weight: 900;  
       }
+      
+      p#loginError {
+        color: red;
+      }
 
-      .container {
+      /* .container {
         display: flex;
         justify-content: center;
         align-items: center;
       }
+      
+      .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
     </style>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <nav class="navbar">
         <a href="index.html">Home</a>
         <a href="contact.html">Contact</a>
       </nav>
-    </header>
+    </header> -->
     <h1 id="text">Hello</h1>
+    <div class="login">
+      <label for="uname">Username:</label>
+      <input type="text" id="uname"><br><br>
+      <label for="pswd">Password:</label>
+      <input type="password" id="pswd"><br><br>
+      <p id="loginError"></p>
+    </div>
     <div class="container">
-      <button id="button" onclick="clickEvent()">Click Me</button>
-      <button onclick="window.location.href='contact.html'">Contact</button>
+      <button id="button" onclick="loginEvent()">Login</button>
     </div>
     <script>
-      let state = true
-
-      function clickEvent() {
-        if (state === true) {
-          document.getElementById("text").innerHTML = "Hey";
-          state = false;
+      let username = "Admin"
+      let password = "Admin"
+      
+      function loginEvent() {
+        let enteredUsername = document.getElementById("uname").value
+        let enteredPassword = document.getElementById("pswd").value
+        
+        if (enteredUsername === username && enteredPassword === password) {
+          window.location.href="contact.html";
         } else {
-          document.getElementById("text").innerHTML = "Hello";
-          state = true;
+          document.getElementById("loginError").innerHTML = "Invalid username or password. Try again."
+          document.getElementById("loginError").style.display = "block"
+          setTimeout(() => {
+            document.getElementById("loginError").style.display = "none"
+          }, 4000)
         }
       }
     </script>
