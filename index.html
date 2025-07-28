@@ -16,9 +16,9 @@
       <button onclick="window.location.href='contact.html'">Contact</button>
     </div>
     <script>
+      let state = true
+      
       function clickEvent() {
-        let state = true
-
         if (state === true) {
           document.getElementById("text").innerHTML = "Hey"
           state = false;
