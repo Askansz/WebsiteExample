@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<head>
-  <style>
-    h1 {
-      color: #000000;
-      text-align: center;
-      font-weight: 900;
-    }
-  </style>
-</head>
 <html>
+  <head>
+    <style>
+      h1 {
+        color: #000000;
+        text-align: center;
+        font-weight: 900;
+      }
+    </style>
+  </head>
   <body>
     <h1 id="text">Hello</h1>
     <div class="container">
@@ -16,14 +16,14 @@
       <button onclick="window.location.href='contact.html'">Contact</button>
     </div>
     <script>
-      let state = true
-      
+      let state = true;
+
       function clickEvent() {
         if (state === true) {
-          document.getElementById("text").innerHTML = "Hey"
+          document.getElementById("text").innerHTML = "Hey";
           state = false;
         } else {
-          document.getElementById("text").innerHTML = "Hello"
+          document.getElementById("text").innerHTML = "Hello";
           state = true;
         }
       }
