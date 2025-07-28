@@ -15,5 +15,18 @@
       <button id="button" onclick="clickEvent()">Click Me</button>
       <button onclick="window.location.href='contact.html'">Contact</button>
     </div>
+    <script>
+      function clickEvent() {
+        let state = true
+
+        if (state === true) {
+          document.getElementById("text").innerHTML = "Hey"
+          state = false;
+        } else {
+          document.getElementById("text").innerHTML = "Hello"
+          state = true;
+        }
+      }
+    </script>
   </body>
 </html>
